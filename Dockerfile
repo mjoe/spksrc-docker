@@ -49,7 +49,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py -O - | python3
 RUN wget https://bootstrap.pypa.io/get-pip.py -O - | python
 RUN pip install virtualenv httpie
 
-RUN git clone https://github.com/SynoCommunity/spksrc.git /spksrc
+RUN git clone https://github.com/SynoCommunity/spksrc.git /spksrc && \
+cd /spksrc/toolchains/ && for d in `ls -d syno-*-5.2`; do cd $d; make; cd ..; done
 
 # Volume pointing to spksrc sources
 VOLUME /spksrc
