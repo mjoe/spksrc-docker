@@ -49,7 +49,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py -O - | python3
 RUN wget https://bootstrap.pypa.io/get-pip.py -O - | python
 RUN pip install virtualenv httpie
 
-RUN git clone https://github.com/SynoCommunity/spksrc.git
+RUN git clone https://github.com/SynoCommunity/spksrc.git /spksrc
 
 # Volume pointing to spksrc sources
 VOLUME /spksrc
